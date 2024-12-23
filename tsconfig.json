@@ -1,11 +1,31 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "target": "ES2020", // Cible ES2020 pour un JS moderne, compatible avec Node.js >=14
+    "module": "CommonJS", // Compatible avec Node.js
+    "outDir": "./dist", // Répertoire de sortie pour le code compilé
+    "strict": true, // Activer les vérifications strictes
+    "esModuleInterop": true, // Simplifie l'importation des modules CommonJS
+    "skipLibCheck": true, // Ignore les vérifications des fichiers de définition pour accélérer la compilation
+    "sourceMap": false, // Désactive les sourcemaps pour un JS plus léger
+    "declaration": false, // Désactive la génération des fichiers .d.ts (si non nécessaire)
+    "removeComments": true, // Supprime les commentaires du code généré
+    "downlevelIteration": false, // Pas nécessaire pour Node.js moderne
+    "inlineSourceMap": false, // Pas nécessaire pour la production
+    "inlineSources": false, // Pas nécessaire pour la production
+    "noEmitHelpers": true, // Réduit les helpers générés (utilisé avec `importHelpers`)
+    "importHelpers": true, // Réutilise les helpers via `tslib` pour minimiser le code
+    "moduleResolution": "node", // Optimisé pour les modules Node.js
+    "resolveJsonModule": false, // Désactive l'importation des JSON si non utilisé
+    "stripInternal": true, // Supprime les types marqués comme internes
+    "noUnusedLocals": true, // Avertit sur les variables inutilisées
+    "noUnusedParameters": true, // Avertit sur les paramètres inutilisés
+    "noImplicitAny": true, // Vérifie les typages explicites pour éviter les `any` implicites
+    "forceConsistentCasingInFileNames": true, // Assure une cohérence des noms de fichiers
+    "useDefineForClassFields": true, // Optimise les champs de classe pour ES2020+
+    "lib": ["ES2020"], // Inclut uniquement les bibliothèques modernes nécessaires
+    "allowSyntheticDefaultImports": true, // Permet les imports plus simples
+    "emitDecoratorMetadata": false // Désactive les métadonnées inutiles sauf si requis
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "test", "**/*.spec.ts"]
 }

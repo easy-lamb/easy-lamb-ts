@@ -1,0 +1,7 @@
+# Exclure les sources
+src/
+
+# Exclure les fichiers de configuration
+eslint.config.mjs
+tsconfig.json
+.idea/

@@ -1,9 +1,12 @@
 {
-  "name": "easy-lamb-ts",
-  "version": "1.0.0",
+  "name": "@easy-lamb/ts",
+  "version": "1.0.0-alpha4",
   "description": "Parse, Build and Generate Terraform code for deploying AWS Lambda functions using Easy Lamb Terraform module.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "easy-lamb-ts": "dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -27,13 +30,14 @@
   "dependencies": {
     "commander": "^12.1.0",
     "esbuild": "^0.24.2",
-    "winston": "^3.17.0"
+    "winston": "^3.17.0",
+    "typescript": "^5.7.2",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "eslint": "^9.17.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1"
   }
 }

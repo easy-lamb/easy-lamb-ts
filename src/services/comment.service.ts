@@ -31,10 +31,10 @@ function visitNode(
     file: string, config: Config
 ) {
     if (ts.isFunctionDeclaration(node) || ts.isMethodDeclaration(node)) {
-        parseComments(node, content, result, file, config);
+        parseComments(node, content, result);
         return;
     } else if (ts.isVariableStatement(node)) {
-        parseComments(node, content, result, file, config);
+        parseComments(node, content, result);
         return;
     }
 
@@ -44,8 +44,7 @@ function visitNode(
 function parseComments(
     node: ts.Node,
     content: string,
-    result: CommentResult[],
-    file: string, config: Config
+    result: CommentResult[]
 ) {
     const commentRanges = ts.getLeadingCommentRanges(content, node.pos) || [];
 

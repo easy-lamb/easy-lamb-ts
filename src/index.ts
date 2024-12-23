@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {Command} from 'commander';
 import {createBuildCommand} from './commands/build.command';
 import {createParseCommand} from './commands/parse.command';
